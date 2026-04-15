@@ -26,7 +26,11 @@ pred = model.predict(X)
 
 print("STEP 6: Calculating metrics...")
 
-rmse = mean_squared_error(y, pred, squared=False)
+from sklearn.metrics import mean_squared_error
+import numpy as np
+
+rmse = np.sqrt(mean_squared_error(y, pred))
+
 r2 = r2_score(y, pred)
 
 print("\n✅ RESULTS:")
